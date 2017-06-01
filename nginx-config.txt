@@ -1,0 +1,33 @@
+#myconfig
+
+http {
+index index.htm index.html gothome.html;
+
+   server {
+		listen       80;
+        	server_name localhost;
+       	        root /Users/patta/Desktop/Edwisor/Assignment_5_Sandeep;
+    
+        	location = / 
+		{ 
+        		root /Users/patta/Desktop/Edwisor/Assignment_5_Sandeep; 
+                }
+	
+		error_page 404 /my404.html;
+ 
+		location = /my404.html 
+        	{
+ 			root /Users/patta/Desktop/Edwisor/error;
+			internal;
+        	}	
+		
+		error_page 500 501 502 503 504 /my500.html;
+
+		location = /my500.html 
+        	{
+			root /Users/patta/Desktop/Edwisor/error;
+			internal;
+
+		}
+	  }
+   }
